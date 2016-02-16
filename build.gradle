@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "to-do-list"
 version = '1.0'
-mainClassName = "List"
+mainClassName = "App"
 
 repositories {
   mavenCentral()
