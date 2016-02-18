@@ -29,4 +29,16 @@ public class Category {
   public static ArrayList getTasks() {
     return tasks;
   }
+
+  public static Category find(int id) {
+    return categories.get(id-1);
+  }
+
+  public static void addTask(Task task) {
+    tasks.add(task);
+  }
+
+  public static void clear() {
+    categories.clear();
+  }
 }

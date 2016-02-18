@@ -23,34 +23,34 @@ public class CategoryTest {
     Category testCategory = new Category("Home");
     assertTrue(testCategory.getTasks() instanceof ArrayList);
   }
-  
-  // @Test
-  // public void all_returnsAllInstancesOfTask_true() {
-  //   Category firstCategory = new Category("Home");
-  //   Category secondCategory = new Category("Home");
-  //   assertTrue(Category.all().contains(firstCategory));
-  //   assertTrue(Category.all().contains(secondCategory));
-  // }
-  //
-  // @Test
-  // public void clear_removesAllCategoryInstancesFromMemory() {
-  //   Category testCategory = new Category("Home");
-  //   Category.clear();
-  //   assertEquals(Category.all().size(), 0);
-  // }
-  //
-  // @Test
-  // public void find_returnsCategoryWithSameId() {
-  //   Category testCategory = new Category("Home");
-  //   assertEquals(Category.find(testCategory.getId()), testCategory);
-  // }
-  //
-  // @Test
-  // public void addTask_addsTaskToList() {
-  //   Category testCategory = new Category("Bob's Used Tasks");
-  //   Task testTask = new Task("Mow the lawn");
-  //   testCategory.addTask(testTask);
-  //   assertTrue(testCategory.getTasks().contains(testTask));
-  // }
+
+  @Test
+  public void all_returnsAllInstancesOfTask_true() {
+    Category firstCategory = new Category("Home");
+    Category secondCategory = new Category("Work");
+    assertTrue(Category.all().contains(firstCategory));
+    assertTrue(Category.all().contains(secondCategory));
+  }
+
+  @Test
+  public void clear_removesAllCategoryInstancesFromMemory() {
+    Category testCategory = new Category("Home");
+    Category.clear();
+    assertEquals(Category.all().size(), 0);
+  }
+
+  @Test
+  public void find_returnsCategoryWithSameId() {
+    Category testCategory = new Category("Home");
+    assertEquals(Category.find(testCategory.getId()), testCategory);
+  }
+
+  @Test
+  public void addTask_addsTaskToList() {
+    Category testCategory = new Category("Bob's Used Tasks");
+    Task testTask = new Task("Mow the lawn");
+    testCategory.addTask(testTask);
+    assertTrue(testCategory.getTasks().contains(testTask));
+  }
 
 }
