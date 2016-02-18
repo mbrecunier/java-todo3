@@ -4,6 +4,8 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class TaskTest {
+  @Rule
+  public ClearRule clearRule = new ClearRule();
 
   @Test
   public void task_instantiatesCorrectly_true() {
