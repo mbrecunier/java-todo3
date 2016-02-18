@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Category {
   private static ArrayList<Category> categories = new ArrayList<Category>();
+  private static ArrayList<Task> tasks;
 
   private String mName;
   private int mId;
@@ -10,6 +11,7 @@ public class Category {
       mName = name;
       categories.add(this);
       mId = categories.size();
+      tasks = new ArrayList<Task>();
   }
 
   public String getName() {
@@ -22,5 +24,9 @@ public class Category {
 
   public int getId() {
     return mId;
+  }
+
+  public static ArrayList getTasks() {
+    return tasks;
   }
 }
