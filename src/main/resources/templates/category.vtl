@@ -1,1 +1,17 @@
- 
+#if ($category)
+  <h1>$category.getName()</h1>
+  #if ($tasks)
+    <ul>
+    #foreach($task in $tasks)
+      <li><h4>$task.getDescription</h4></li>
+    #end
+    </ul>
+  #else
+    <h3>No tasks yet</h3>
+  #end
+#else
+  <h1>Category not found</h1>
+#end
+
+<a href="/categories/$category.getId()/tasks/new">Add a new task</a>
+<a href="/categories">View all categories</a>

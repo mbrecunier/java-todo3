@@ -25,7 +25,7 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void categoryIsCreatedTest() {
+  public void categoryIsCreated() {
     goTo("http://localhost:4567/");
     click("a", withText("Add new category"));
     fill("#name").with("Household chores");
@@ -33,4 +33,14 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Household chores");
   }
 
+  @Test
+  public void categoryTasksFormisDisplay() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add new category"));
+    fill("#name").with("Pets");
+    submit(".btn");
+    click("a", withText("Pets"));
+    click("a", withText("Add a new task"));
+    assertThat(pageSource()).contains("Add a Task to Pets");
+  }
 }
