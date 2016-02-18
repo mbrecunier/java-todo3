@@ -2,7 +2,7 @@
   <h1>$category.getName()</h1>
   #if ($tasks)
     <ul>
-    #foreach($task in $tasks)
+    #foreach($task in $category.getTasks())
       <li><h4>$task.getDescription</h4></li>
     #end
     </ul>
