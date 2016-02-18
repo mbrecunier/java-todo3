@@ -11,13 +11,13 @@ public class CategoryTest {
     Category testCategory = new Category("Home");
     assertEquals("Home", testCategory.getName());
   }
-  //
-  // @Test
-  // public void getId_returnsCategoryId() {
-  //   Category testCategory = new Category("Home");
-  //   assertTrue(Category.all().size() == testCategory.getId());
-  // }
-  //
+
+  @Test
+  public void getId_returnsCategoryId() {
+    Category testCategory = new Category("Home");
+    assertTrue(Category.all().size() == testCategory.getId());
+  }
+
   // @Test
   // public void getTasks_initiallyReturnsEmptyArrayList() {
   //   Category testCategory = new Category("Home");
