@@ -1,7 +1,7 @@
 <h1> All tasks </h1>
 <ul>
 #foreach ($task in $tasks)
-  <a href="/tasks/$task.getId()">$task.getDescription()</a><br>
+  <li><h3><a href="/tasks/$task.getId()">$task.getDescription()</a></h3></li>
 #end
 </ul>
 <a href="/tasks/new">Add New Task</a>

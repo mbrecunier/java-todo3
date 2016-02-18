@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Category {
   private static ArrayList<Category> categories = new ArrayList<Category>();
-  private static ArrayList<Task> tasks;
 
+  private static ArrayList<Task> mTasks;
   private String mName;
   private int mId;
 
@@ -11,7 +11,7 @@ public class Category {
       mName = name;
       categories.add(this);
       mId = categories.size();
-      tasks = new ArrayList<Task>();
+      mTasks = new ArrayList<Task>();
   }
 
   public String getName() {
@@ -27,15 +27,20 @@ public class Category {
   }
 
   public static ArrayList getTasks() {
-    return tasks;
+    return mTasks;
   }
 
   public static Category find(int id) {
-    return categories.get(id-1);
+    try {
+      return categories.get(id-1);
+    } catch (IndexOutOfBoundsException exception) {
+      System.out.println("Index out of bounds exception: " + exception.getMessage());
+      return null;
+    }
   }
 
   public static void addTask(Task task) {
-    tasks.add(task);
+    mTasks.add(task);
   }
 
   public static void clear() {

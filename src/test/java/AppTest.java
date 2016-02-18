@@ -24,41 +24,5 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Todo list!");
   }
 
-  @Test
-  public void taskIsCreatedTest() {
-    goTo("http://localhost:4567/");
-    click("a", withText("Add a new task"));
-    fill("#description").with("Mow the lawn");
-    submit(".btn");
-    assertThat(pageSource()).contains("All tasks");
-  }
-
-  @Test
-  public void taskIsDisplayedTest() {
-    goTo("http://localhost:4567/tasks/new");
-    fill("#description").with("Mow the lawn");
-    submit(".btn");
-    assertThat(pageSource()).contains("Mow the lawn");
-  }
-
-  @Test
-  public void multipleTasksAreDisplayedTest() {
-    goTo("http://localhost:4567/tasks/new");
-    fill("#description").with("Mow the lawn");
-    submit(".btn");
-    goTo("http://localhost:4567/tasks/new");
-    fill("#description").with("Buy groceries");
-    submit(".btn");
-    assertThat(pageSource()).contains("Mow the lawn");
-    assertThat(pageSource()).contains("Buy groceries");
-  }
-
-  @Test
-  public void taskShowPageDisplaysDescription() {
-    goTo("http://localhost:4567/tasks/new");
-    fill("#description").with("Do the dishes");
-    submit(".btn");
-    click("a", withText("Do the dishes"));
-    assertThat(pageSource()).contains("Do the dishes");
-  }
+  
 }
